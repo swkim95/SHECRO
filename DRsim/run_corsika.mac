@@ -1,0 +1,8 @@
+#This macro can not be executed standalone
+/DRsim/action/useCorsika True
+
+/run/numberOfThreads 4
+/run/verbose 1
+/run/initialize
+
+/run/beamOn 10
