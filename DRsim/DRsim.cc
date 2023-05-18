@@ -21,6 +21,9 @@
 #include "G4UIExecutive.hh"
 // #endif
 
+// To visualize : ./bin/DRsim
+// To visualize with CORSIKA : ./bin/DRsim init_vis_CORSIKA <seed> Flat_CORSIKA
+
 int main(int argc, char** argv) {
   // #ifdef G4UI_USE
     // Detect interactive mode (if no arguments) and define UI session

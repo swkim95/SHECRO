@@ -24,5 +24,6 @@ DRsimMirrorParameterisation::DRsimMirrorParameterisation(std::vector<G4float>& x
 DRsimMirrorParameterisation::~DRsimMirrorParameterisation() {}
 
 void DRsimMirrorParameterisation::ComputeTransformation(const G4int copyNo, G4VPhysicalVolume* physVol) const {
-  physVol->SetTranslation(G4ThreeVector(fXMirror[copyNo],fYMirror[copyNo],0.));
+  // physVol->SetTranslation(G4ThreeVector(fXMirror[copyNo],fYMirror[copyNo],0.));
+  physVol->SetTranslation(G4ThreeVector(0., fYMirror[copyNo],fXMirror[copyNo]));
 }

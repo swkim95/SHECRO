@@ -26,5 +26,6 @@ DRsimFilterParameterisation::DRsimFilterParameterisation(std::vector<G4float>& x
 DRsimFilterParameterisation::~DRsimFilterParameterisation() {}
 
 void DRsimFilterParameterisation::ComputeTransformation(const G4int copyNo, G4VPhysicalVolume* physVol) const {
-  physVol->SetTranslation(G4ThreeVector(fXFilter[copyNo],fYFilter[copyNo],0.));
+  // physVol->SetTranslation(G4ThreeVector(fXFilter[copyNo],fYFilter[copyNo],0.));
+  physVol->SetTranslation(G4ThreeVector(0.,fYFilter[copyNo],fXFilter[copyNo]));
 }
