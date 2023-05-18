@@ -1,0 +1,15 @@
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/lib/librootIO.dylib
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/lib/librootIO_rdict.pcm
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/lib/librootIO.rootmap
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/bin/DRsim
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./gui.mac
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./icons.mac
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./init.mac
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./init_vis.mac
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./run_ele.mac
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./vis.mac
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/bin/P8ptcgen
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/bin/P8generic
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./ptcgun.cmnd
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/./generic.cmnd
+/Users/swkim/DRC/CORSIKA/DRC_sim/SHECRO/install/bin/analysis

@@ -34,8 +34,10 @@ public:
 
     // The recommended method to convert Pythia events into HepMC ones
     bool fill_next_event( Pythia8::Pythia& pythia, GenEvent* evt, int ievnum = -1 )
-    {
-        return fill_next_event( pythia.event, evt, ievnum, &pythia.info, &pythia.settings);
+    {   
+        auto info = pythia.info;
+        // return fill_next_event( pythia.event, evt, ievnum, &pythia.info, &pythia.settings);
+        return fill_next_event( pythia.event, evt, ievnum, &info, &pythia.settings);
     }
 
     // Alternative method to convert Pythia events into HepMC ones

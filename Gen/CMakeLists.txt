@@ -17,9 +17,12 @@ add_executable(P8ptcgen P8ptcgen.cc ${sources} ${headers})
 target_link_libraries(
   P8ptcgen
   ${PYTHIA_DIR}/lib/libpythia8.a
-  ${HEPMC_DIR}/lib64/libHepMC3.so
-  ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
-  ${FASTJET_DIR}/lib/libfastjet.so
+  ${HEPMC_DIR}/lib/libHepMC3.dylib
+  ${HEPMC_DIR}/lib/libHepMC3rootIO.dylib
+  ${FASTJET_DIR}/lib/libfastjet.dylib
+  # ${HEPMC_DIR}/lib64/libHepMC3.so
+  # ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  # ${FASTJET_DIR}/lib/libfastjet.so
   rootIO
   ${CMAKE_DL_LIBS}
 )
@@ -28,9 +31,12 @@ add_executable(P8generic P8generic.cc ${sources} ${headers})
 target_link_libraries(
   P8generic
   ${PYTHIA_DIR}/lib/libpythia8.a
-  ${HEPMC_DIR}/lib64/libHepMC3.so
-  ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
-  ${FASTJET_DIR}/lib/libfastjet.so
+  ${HEPMC_DIR}/lib/libHepMC3.dylib
+  ${HEPMC_DIR}/lib/libHepMC3rootIO.dylib
+  ${FASTJET_DIR}/lib/libfastjet.dylib
+  # ${HEPMC_DIR}/lib64/libHepMC3.so
+  # ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  # ${FASTJET_DIR}/lib/libfastjet.so
   rootIO
   ${CMAKE_DL_LIBS}
 )

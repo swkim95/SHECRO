@@ -86,7 +86,9 @@ int main(int argc, char* argv[]) {
       break;
     }
 
-    bool passed = filter.filter(pythia.event, pythia.info);
+    auto info = pythia.info;
+    // bool passed = filter.filter(pythia.event, pythia.info);
+    bool passed = filter.filter(pythia.event, info);
 
     if ( !passed ) continue;
 

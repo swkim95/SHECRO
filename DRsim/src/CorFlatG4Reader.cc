@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream> 
+#include <iomanip> 
 
 CorFlatG4Reader::CorFlatG4Reader(G4int seed, G4String file_path)
-: verbose(1), fMessenger(0), fSeed(seed), fCorsikaPath(file_path), n_event_count(0)
+: verbose(1), n_event_count(0), fMessenger(0), fSeed(seed), fCorsikaPath(file_path)
 {
   DefineCommands();
   Initialize();
@@ -18,6 +20,9 @@ CorFlatG4Reader::~CorFlatG4Reader() {
 }
 
 void CorFlatG4Reader::Initialize() {
+  // std::stringstream stream;
+	// stream << std::setw(6) << std::setfill('0') << std::to_string(fSeed);
+  // fCorsikaPath += "_"+stream.str()+".root";
   fCorsikaPath += "_"+std::to_string(fSeed)+".root";
   aFile = TFile::Open(fCorsikaPath.c_str());
   aTree = (TTree*) aFile->Get("sim");

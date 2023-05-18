@@ -20,8 +20,10 @@ add_executable(analysis analysis.cc ${sources} ${headers})
 # add_executable(calib calib.cc ${sources} ${headers})
 target_link_libraries(
   analysis
-  ${HEPMC_DIR}/lib64/libHepMC3.so
-  ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  # ${HEPMC_DIR}/lib64/libHepMC3.so
+  # ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  ${HEPMC_DIR}/lib/libHepMC3.dylib
+  ${HEPMC_DIR}/lib/libHepMC3rootIO.dylib
   rootIO
   ${ROOT_LIBRARIES}
   ${CMAKE_DL_LIBS}

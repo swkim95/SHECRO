@@ -19,6 +19,7 @@ endif()
 # Setup include directory for this project
 #
 include(${Geant4_USE_FILE})
+
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 # NB: headers are included so they will show up in IDEs
@@ -27,7 +28,7 @@ include_directories(
   ${HEPMC_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${Geant4_INCLUDE_DIR}
-  # ${CORSIKA_DIR}/include
+  #${CORSIKA_DIR}/include
 )
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
@@ -38,8 +39,10 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 add_executable(DRsim DRsim.cc ${sources} ${headers})
 target_link_libraries(
   DRsim ${Geant4_LIBRARIES}
-  ${HEPMC_DIR}/lib64/libHepMC3.so
-  ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  # ${HEPMC_DIR}/lib64/libHepMC3.so
+  # ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  ${HEPMC_DIR}/lib/libHepMC3.dylib
+  ${HEPMC_DIR}/lib/libHepMC3rootIO.dylib
   # ${CORSIKA_DIR}/lib/unknown/libCorsikaFileIO.a
   # ${CORSIKA_DIR}/lib/unknown/libCorsikaIntern.a
   # ${CORSIKA_DIR}/lib/unknown/libCorsikaROOT.a
@@ -47,14 +50,8 @@ target_link_libraries(
   # ${CORSIKA_DIR}/lib/unknown/libCorsikaToROOT.a
   # ${CORSIKA_DIR}/lib/unknown/libMachineIndependent.a
   # ${CORSIKA_DIR}/lib/unknown/liburqmd.a
-  # ${CORSIKA_DIR}/coast/CorsikaROOT/lib_ROOT_Dict.so
-  # ${CORSIKA_DIR}/coast/CorsikaROOT/lib_CORSIKA_ROOT.so
-  # ${CORSIKA_DIR}/coast/CorsikaIntern/lib_CORSIKA_Intern.so
-  # ${CORSIKA_DIR}/coast/CorsikaFileIO/lib_CORSIKA_FileIO.so
-  # /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/5.34.36/x86_64-centos7-gcc48-opt/root/lib/libCint.so
-  # ${ROOT_LIBRARIES}
   rootIO
-  )
+)
 
 file(GLOB DRsim_MACROS ${PROJECT_SOURCE_DIR}/*.mac)
 file(COPY ${DRsim_MACROS} DESTINATION ${PROJECT_BINARY_DIR})
