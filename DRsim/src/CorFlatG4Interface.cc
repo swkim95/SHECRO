@@ -45,7 +45,7 @@ void CorFlatG4Interface::FlatCorsika2G4(const EVT* anEvent, G4Event* g4event) {
     int pdgid = branch_PDGID->at(idx);
     double px = branch_Px->at(idx);
     double py = branch_Py->at(idx);
-    double pz = branch_Pz->at(idx); // to make beam downward (toward ground)
+    double pz = -branch_Pz->at(idx); // to make beam downward (toward ground)
     double e = branch_E->at(idx);
     double x = branch_x->at(idx);
     double y = branch_y->at(idx);
@@ -53,12 +53,12 @@ void CorFlatG4Interface::FlatCorsika2G4(const EVT* anEvent, G4Event* g4event) {
     double w = branch_Weight->at(idx);
 
     // First, only shoot particles for single DRC module (2.5 m * 2.5 m * 1 m)
-    if (! ( ((x * 10) >= -1250.) &&
-            ((x * 10) <= 1250.)  &&
-            ((y * 10) >= -1250.) &&
-            ((y * 10) <= 1250.) )  ) continue;
+    if (! ( ((x * 10) >= -1125.) &&
+            ((x * 10) <= 1125.)  &&
+            ((y * 10) >= -1125.) &&
+            ((y * 10) <= 1125.) )  ) continue;
     
-    G4LorentzVector xvtx((x * 10), (y * 10), 0., t);
+    G4LorentzVector xvtx((x * 10), (y * 10), 1000., t);
     if (!CheckVertexInsideWorld(xvtx.vect()*mm)) continue;
 
     // create G4PrimaryVertex and associated G4PrimaryParticles

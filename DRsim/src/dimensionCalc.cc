@@ -44,10 +44,15 @@ G4ThreeVector dimensionCalc::GetOrigin_PMTG(G4int i) {
   double row = i/fNofRow;
   double col = i%fNofRow;
 
+  // return G4ThreeVector( 
+  //                       -fModuleHeight * (double)fNofRow/2. + row * fModuleHeight + fModuleHeight/2., 
+  //                       -fModuleWidth  * (double)fNofRow/2. + col * fModuleWidth  + fModuleWidth/2., 
+  //                       ftower_height + fFrontL + fPMTT/2.
+  //                     );
   return G4ThreeVector( 
-                        -fModuleHeight * (double)fNofRow/2. + row * fModuleHeight + fModuleHeight/2., 
-                        -fModuleWidth  * (double)fNofRow/2. + col * fModuleWidth  + fModuleWidth/2., 
-                        ftower_height + fFrontL + fPMTT/2.
+                        -fModuleHeight/2. - fFrontL - fPMTT/2.,
+                        0.,
+                        ftower_height/2.
                       );
 }
 
@@ -56,9 +61,14 @@ G4ThreeVector dimensionCalc::GetOrigin_Reflector(G4int i) {
   double row = i/fNofRow;
   double col = i%fNofRow;
 
+  // return G4ThreeVector( 
+  //                       -fModuleHeight * (double)fNofRow/2. + row * fModuleHeight + fModuleHeight/2., 
+  //                       -fModuleWidth  * (double)fNofRow/2. + col * fModuleWidth  + fModuleWidth/2., 
+  //                       fFrontL - fReflectorT/2.
+  //                     );
   return G4ThreeVector( 
-                        -fModuleHeight * (double)fNofRow/2. + row * fModuleHeight + fModuleHeight/2., 
-                        -fModuleWidth  * (double)fNofRow/2. + col * fModuleWidth  + fModuleWidth/2., 
-                        fFrontL - fReflectorT/2.
+                        fModuleHeight/2. - fFrontL + fReflectorT/2.,
+                        0.,
+                        ftower_height/2.
                       );
 }

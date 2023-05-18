@@ -23,5 +23,6 @@ DRsimCellParameterisation::~DRsimCellParameterisation()
 {}
 
 void DRsimCellParameterisation::ComputeTransformation(const G4int copyNo, G4VPhysicalVolume* physVol) const {
-  physVol->SetTranslation(G4ThreeVector(fXCell[copyNo],fYCell[copyNo],0.));
+  // physVol->SetTranslation(G4ThreeVector(fXCell[copyNo],fYCell[copyNo],0.));
+  physVol->SetTranslation(G4ThreeVector(0, fYCell[copyNo],fXCell[copyNo]));
 }
