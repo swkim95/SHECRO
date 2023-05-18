@@ -76,4 +76,4 @@
 #
 # Set visualization to accumulate events into one picture
 #
-/vis/scene/endOfEventAction accumulate
+# /vis/scene/endOfEventAction accumulate
